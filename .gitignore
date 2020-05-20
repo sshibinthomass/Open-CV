@@ -9,4 +9,4 @@ venv
 *.pickle
 *.csv
 *.yml
-test.pyc
+test.Python
