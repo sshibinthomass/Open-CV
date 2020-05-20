@@ -1,0 +1,11 @@
+*.mp4
+.idea
+face
+my_pics
+package
+test
+venv
+*.avi
+*.pickle
+*.csv
+*.yml
