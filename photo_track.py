@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+
+
 def nothing(x):
     pass
 
@@ -11,14 +13,14 @@ cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)
 cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)
 cv2.createTrackbar("US", "Tracking", 255, 255, nothing)
 cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)
-a=1
+a = 1
 while True:
-    frame = cv2.imread('test\photo1.jpeg')
-    scale_percent = 20 # percent of original size
+    frame = cv2.imread("test\photo1.jpeg")
+    scale_percent = 20  # percent of original size
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
     dim = (width, height)
-    frame=cv2.resize(frame,dim,interpolation=cv2.INTER_AREA)
+    frame = cv2.resize(frame, dim, interpolation=cv2.INTER_AREA)
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
@@ -35,15 +37,15 @@ while True:
 
     mask = cv2.inRange(hsv, l_b, u_b)
 
-    res=cv2.bitwise_and(frame, frame, mask=mask)
+    res = cv2.bitwise_and(frame, frame, mask=mask)
 
     cv2.imshow("frame", frame)
     cv2.imshow("mask", mask)
     cv2.imshow("res", res)
 
-    key=cv2.waitKey(1)
-    if key==27:
+    key = cv2.waitKey(1)
+    if key == 27:
         break
-    elif key==ord('s'):
-        cv2.imwrite('img'+str(a)+'.jpg',res)
-        a=a+1
+    elif key == ord("s"):
+        cv2.imwrite("img" + str(a) + ".jpg", res)
+        a = a + 1
