@@ -9,7 +9,7 @@ video = cv2.VideoCapture(0)
 while True:
     check, gray = video.read()
 
-    # gray=cv2.cvtColor(gray,cv2.COLOR_BGR2GRAY)
+    gray=cv2.cvtColor(gray,cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.05, minNeighbors=5)
 
     for x, y, w, h in faces:
