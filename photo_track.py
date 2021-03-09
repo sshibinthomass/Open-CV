@@ -15,7 +15,7 @@ cv2.createTrackbar("US", "Tracking", 255, 255, nothing)
 cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)
 a = 1
 while True:
-    frame = cv2.imread("test\photo1.jpeg")
+    frame = cv2.imread("photos/1.jpg")
     scale_percent = 20  # percent of original size
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
