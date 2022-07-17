@@ -8,10 +8,10 @@ def nothing(x):
 
 cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*"XVID")
-out = cv2.VideoWriter("output3.avi", fourcc, 20.0, (640, 480))
+out = cv2.VideoWriter("output5.avi", fourcc, 20.0, (640, 480))
 
 cv2.namedWindow("Tracking")
-cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)
+cv2.createTrackbar("LH", "Tracking", 0, 255, nothing) #hue, saturation, lightness
 cv2.createTrackbar("LS", "Tracking", 0, 255, nothing)
 cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)
 cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)
