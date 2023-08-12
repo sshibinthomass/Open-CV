@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 
-img = cv2.imread("E:\Projects\Python\Open-CV\photos\shibin.jpg")
+img = cv2.imread("photos\shibin.jpg")
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-template = cv2.imread("E:\Projects\Python\Open-CV\photos\elon.jpg", 0)
+template = cv2.imread("photos\elon.jpg", 0)
 
 w, h = template.shape[::-1]
 
